@@ -15,7 +15,6 @@ INDEX VERSION 1.131+C:\Users\Ismael Machado\Documents\GitHub\InfoLibras\codigos\
 1573121997.index
 1166357500.index
 2707737922.index
-459226014.index
 3173990942.index
 1525561123.index
 1110334383.index
@@ -36,8 +35,8 @@ INDEX VERSION 1.131+C:\Users\Ismael Machado\Documents\GitHub\InfoLibras\codigos\
 700088581.index
 2161747041.index
 3964918290.index
-3741046560.index
 2830728146.index
+3741046560.index
 1882672504.index
 1865055466.index
 790808213.index
@@ -55,8 +54,8 @@ INDEX VERSION 1.131+C:\Users\Ismael Machado\Documents\GitHub\InfoLibras\codigos\
 4169651095.index
 146530134.index
 891011271.index
-815852130.index
 72535324.index
+815852130.index
 387829504.index
 1713295793.index
 866495595.index
