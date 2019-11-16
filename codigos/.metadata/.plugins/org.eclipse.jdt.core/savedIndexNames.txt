@@ -5,8 +5,8 @@ INDEX VERSION 1.131+C:\Users\Ismael Machado\Documents\GitHub\InfoLibras\codigos\
 2361458423.index
 4130458765.index
 2732714168.index
-2710905261.index
 412960933.index
+2710905261.index
 2726362563.index
 1726295500.index
 1633992518.index

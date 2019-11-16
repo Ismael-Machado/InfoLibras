@@ -2,6 +2,9 @@ package br.ufac.si.academico.entidades;
 
 import java.util.*;
 
+import javax.persistence.*;
+
+@Entity
 public class Registro {
 	Integer idRegistro;
 	int idUsuario;
@@ -13,7 +16,7 @@ public class Registro {
 	String Observacoes;
 
 	public Registro() {
-		super();
+		
 	}
 
 	public Registro(Integer idRegistro, int idUsuario, int idAdmin, String status, String tipoOperacao,

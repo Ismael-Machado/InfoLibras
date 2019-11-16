@@ -2,8 +2,12 @@ package infolibras.entidades;
 
 import java.util.*;
 
+import javax.persistence.*;
+
+@Entity
 public class Usuario {
 
+	@Id
 	int id;
 	String nome;
 	String telefone;

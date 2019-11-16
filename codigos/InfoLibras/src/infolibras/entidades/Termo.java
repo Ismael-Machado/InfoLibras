@@ -1,7 +1,11 @@
 package infolibras.entidades;
 
+import javax.persistence.*;
+
+@Entity
 public class Termo {
 
+	@Id
 	int id;
 	String nome;
 	String descricao;
