@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sistema de Controle Acadêmico</title>
+</head>
+<h:body>
+
+	<h1>Sistema de Controle Acadêmico</h1>
+	<h2>Gerenciamento de Cursos</h2>
+
+	<h:form>
+	
+		<h:outputLabel value="Chave: " for="chave" />
+		<h:inputText id="chave" value="#{cursoControlador.chave}" />
+		<h:commandButton action="null" value="Buscar" />
+		
+		<h:commandButton value="Incluir" 
+			action="#{cursoControlador.incluir}" />
+			
+		<h:commandButton value="Voltar" 
+			action="index" />		
+			
+		<h:dataTable value="#{cursoControlador.cursos}" 
+			var="curso" border="1">
+			<h:column>
+				<f:facet name="header">Código</f:facet>
+				#{curso.codigo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{curso.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Operações</f:facet>
+				<h:commandButton value="Editar" 
+					action="#{cursoControlador.editar(curso)}" />
+				<h:commandButton value="Excluir" 
+					action="#{cursoControlador.excluir(curso)}" />					
+			</h:column>			
+			
+		</h:dataTable>	
+	
+	</h:form>
+
+
+</h:body>
+</html>

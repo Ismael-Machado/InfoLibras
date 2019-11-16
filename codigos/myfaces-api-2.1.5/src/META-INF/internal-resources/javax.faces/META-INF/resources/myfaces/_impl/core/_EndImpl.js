@@ -1,0 +1,1 @@
+(function(){var C=window||document;var B=function(F){var E=C.myfaces._implTemp;(!!E[F])?C[F]=E[F]:null;},D=["_MF_CLS","_MF_SINGLTN","_MF_OBJECT","_PFX_UTIL","_PFX_XHR","_PFX_CORE","_PFX_I18N"];for(var A=D.length-1;A>=0;A--){B(D[A]);}})();

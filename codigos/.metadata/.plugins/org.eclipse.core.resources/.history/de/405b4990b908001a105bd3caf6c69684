@@ -1,0 +1,5 @@
+package br.ufac.si.academico.entidades;
+
+public class Registro {
+
+}

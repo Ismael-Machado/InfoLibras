@@ -1,0 +1,15 @@
+package br.ufac.si.academico.entidades;
+
+import java.util.*;
+
+public class Registro {
+	Integer idRegistro;
+	int idUsuario;
+	int idAdmin;
+	String status;
+	String tipoOperacao;
+	Date dataRegistro;
+	Date DataValidacao;
+	String Observacoes;
+	
+}

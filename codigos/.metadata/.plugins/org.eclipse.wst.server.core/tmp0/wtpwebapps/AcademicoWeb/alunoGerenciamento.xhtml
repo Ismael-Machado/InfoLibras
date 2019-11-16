@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sistema de Controle Acadêmico</title>
+</head>
+<h:body>
+
+	<h1>Sistema de Controle Acadêmico</h1>
+	<h2>Gerenciamento de Alunos</h2>
+
+	<h:form>
+	
+		<h:outputLabel value="Chave: " for="chave" />
+		<h:inputText id="chave" value="#{alunoControlador.chave}" />
+		<h:commandButton action="null" value="Buscar" />
+		
+		<h:commandButton value="Incluir" 
+			action="#{alunoControlador.incluir}" />
+			
+		<h:commandButton value="Voltar" 
+			action="index" />		
+			
+		<h:dataTable value="#{alunoControlador.alunos}" 
+			var="aluno" border="1">
+			<h:column>
+				<f:facet name="header">Matrícula</f:facet>
+				#{aluno.matricula}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{aluno.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Curso</f:facet>
+				#{aluno.curso.nome}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Operações</f:facet>
+				<h:commandButton value="Editar" 
+					action="#{alunoControlador.editar(aluno)}" />
+				<h:commandButton value="Excluir" 
+					action="#{alunoControlador.excluir(aluno)}" />					
+			</h:column>			
+			
+		</h:dataTable>	
+	
+	</h:form>
+
+
+</h:body>
+</html>

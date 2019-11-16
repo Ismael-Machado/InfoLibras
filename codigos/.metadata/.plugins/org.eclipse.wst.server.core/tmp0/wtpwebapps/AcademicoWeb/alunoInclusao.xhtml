@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sistema de Controle Acadêmico</title>
+</head>
+<h:body>
+
+	<h1>Sistema de Controle Acadêmico</h1>
+	<h2>Inclusão de Aluno</h2>
+
+	<h:form>
+	
+		<h:panelGrid columns="3">
+		
+			<h:outputLabel value="Matrícula:" for="matricula" />
+			<h:inputText id= "matricula"
+				value="#{alunoControlador.aluno.matricula}"
+				required="true"
+				requiredMessage="Matrícula é obrigatória!"
+				converterMessage="Matrícula deve ser um número!" />
+			<h:message for="matricula" />
+			
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id= "nome"
+				value="#{alunoControlador.aluno.nome}"
+				required="true"
+				requiredMessage="Nome é obrigatóri0!" />
+			<h:message for="nome" />
+
+			<h:outputLabel value="Telefone:" for="fone" />
+			<h:inputText id= "fone"
+				value="#{alunoControlador.aluno.fone}" 
+				required="true"
+				requiredMessage="Telefone é obrigatório!"/>
+			<h:message for="fone" />
+
+			<h:outputLabel value="Endereço:" for="endereco" />
+			<h:inputText id= "endereco"
+				value="#{alunoControlador.aluno.endereco}" 
+				required="true"
+				requiredMessage="Endereço é obrigatório!"/>
+			<h:message for="endereco" />
+				
+			<h:outputLabel value="CEP:" for="cep" />
+			<h:inputText id= "cep"
+				value="#{alunoControlador.aluno.cep}"
+				required="true"
+				requiredMessage="CEP é obrigatório!" />
+			<h:message for="cep" />
+
+			<h:outputLabel value="Sexo:" for="sexo" />
+			<h:selectOneMenu id="sexo" 
+				value="#{alunoControlador.aluno.sexo}"
+				required="true"
+				requiredMessage="Sexo é obrigatório!">
+				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--"/>
+				<f:selectItem itemValue="M" itemLabel="Masculino" />
+				<f:selectItem itemValue="F" itemLabel="Feminino" />
+			</h:selectOneMenu>
+			<h:message for="sexo" />
+
+			<h:outputLabel value="Curso:" for="curso" />
+			<h:selectOneMenu id="curso" converter="cursoConversor"
+				value="#{alunoControlador.aluno.curso}"
+				required="true"
+				requiredMessage="Curso é obrigatório!">
+				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--"/>
+				<f:selectItems value="#{alunoControlador.cursos}" var="curso"
+					itemValue="#{curso}"
+					itemLabel="#{curso.nome}"/>
+			</h:selectOneMenu>	
+			<h:message for="curso" />		
+		</h:panelGrid>
+	
+		<h:commandButton value="Confirmar" 
+			action="#{alunoControlador.adicionar}" />
+		<h:commandButton value="Cancelar" 
+			action="alunoGerenciamento" immediate="true"/>
+	
+	</h:form>
+
+
+</h:body>
+</html>

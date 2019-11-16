@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+C:\Users\Ismael Machado\Documents\GitHub\InfoLibras\codigos\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+4087213131.index

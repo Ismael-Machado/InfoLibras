@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Sistema de Controle Acadêmico</title>
+</head>
+<h:body>
+
+	<h1>Sistema de Controle Acadêmico</h1>
+	<h2>Inclusão de Curso</h2>
+
+	<h:form>
+
+		<h:panelGrid columns="3">
+		
+			<h:outputLabel value="Código:" for="codigo" />
+			<h:inputText id= "codigo" required="true"
+				value="#{cursoControlador.curso.codigo}"
+				requiredMessage="Código é obrigatório!"
+				converterMessage="Código deve ser numérico!"
+				validatorMessage="Código deve estar entre 1 e 999!">
+				<f:validateLongRange minimum="1" maximum="999" />
+			</h:inputText>
+				
+			<h:message for="codigo" />
+
+			<h:outputLabel value="Nome:" for="nome" />
+			<h:inputText id= "nome" required="true"
+				value="#{cursoControlador.curso.nome}"
+				requiredMessage="Nome é obrigatório!"
+				validatorMessage="Nome deve possuir entre 5 e 50 caracteres!">
+				<f:validateLength minimum="5" maximum="50" />
+			</h:inputText>	
+			<h:message for="nome" />
+										
+		</h:panelGrid>
+	
+		<h:commandButton value="Confirmar" 
+			action="#{cursoControlador.adicionar}" />
+		<h:commandButton value="Cancelar" 
+			action="cursoGerenciamento" immediate="true" />
+	
+	</h:form>
+
+
+</h:body>
+</html>
