@@ -1,4 +1,6 @@
-GitRepositoriesView.GitDirectories=C\:\\Users\\Ismael Machado\\git\\SisteminhaDaBiblioteca\\.git;
-GitRepositoriesView.GitDirectories.relative=C\:\\Users\\Ismael Machado\\git\\SisteminhaDaBiblioteca\\.git;
+GitRepositoriesView.GitDirectories=C\:\\Users\\Ismael Machado\\git\\SisteminhaDaBiblioteca\\.git;C\:\\Users\\Ismael Machado\\Documents\\GitHub\\InfoLibras\\codigos\\.git;
+GitRepositoriesView.GitDirectories.relative=C\:\\Users\\Ismael Machado\\git\\SisteminhaDaBiblioteca\\.git;.git;
+RepositorySearchDialogDeepSearch=true
 RepositorySearchDialogSearchPath=C\:\\Users\\Ismael Machado\\Documents\\GitHub\\InfoLibras\\codigos
+RepositorySearchDialogSkipHidden=true
 eclipse.preferences.version=1
