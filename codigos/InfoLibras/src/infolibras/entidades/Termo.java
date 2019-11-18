@@ -3,9 +3,11 @@ package infolibras.entidades;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "termos")
 public class Termo {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 	String nome;
 	String descricao;
