@@ -7,7 +7,8 @@
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
 <fullyQualifiedTypeName name="javax.persistence.Id"/>
 <fullyQualifiedTypeName name="javax.persistence.Entity"/>
-<fullyQualifiedTypeName name="infolibras.entidades.Usuario"/>
-<fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
 <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
+<fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
+<fullyQualifiedTypeName name="infolibras.entidades.Usuario"/>
+<fullyQualifiedTypeName name="infolibras.gerentes.UsuarioGerente"/>
 </qualifiedTypeNameHistroy>
