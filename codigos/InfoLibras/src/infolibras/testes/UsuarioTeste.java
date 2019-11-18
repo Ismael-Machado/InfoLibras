@@ -22,6 +22,6 @@ public class UsuarioTeste {
 		em.getTransaction().commit();
 		
 		System.out.println("Deu certo! Terminado");
-		pidjahfljkasndfljkasdnmlf
+		
 	}
 }
