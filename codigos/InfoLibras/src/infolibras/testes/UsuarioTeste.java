@@ -1,6 +1,9 @@
 package infolibras.testes;
 
 import javax.persistence.EntityManagerFactory;
+
+import java.util.List;
+
 import javax.persistence.*;
 
 import infolibras.entidades.Usuario;
@@ -32,20 +35,29 @@ public class UsuarioTeste {
 //		ug.adicionar(u);
 		
 		
+//		UsuarioGerente ug = new UsuarioGerente();
+//		Usuario u;
+//		
+//		
+//		u = ug.recuperar(1);
+//		
+//		System.out.println(u);
+//		
+//		ug.remover(u);
+//		
+//		System.out.println("Deu certo!");
+//		
+//		ug.encerrar();
+		
+		List<Usuario> usuarios;
+		
 		UsuarioGerente ug = new UsuarioGerente();
-		Usuario u;
 		
+		usuarios = ug.recuperarTodos();
 		
-		u = ug.recuperar(1);
-		
-		System.out.println(u);
-		
-		ug.remover(u);
-		
-		System.out.println("Deu certo!");
-		
-		ug.encerrar();
-		
+		for(Usuario u: usuarios) {
+			System.out.println(u);
+		}
 		
 		
 	}

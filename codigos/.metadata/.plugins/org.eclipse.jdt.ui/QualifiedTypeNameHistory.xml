@@ -6,7 +6,6 @@
 <fullyQualifiedTypeName name="infolibras.entidades.Usuario"/>
 <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
 <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
-<fullyQualifiedTypeName name="infolibras.gerentes.UsuarioGerente"/>
 <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
 <fullyQualifiedTypeName name="infolibras.entidades.Termo"/>
@@ -22,4 +21,8 @@
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="infolibras.gerentes.RegistroGerente"/>
+<fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
+<fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="infolibras.gerentes.UsuarioGerente"/>
 </qualifiedTypeNameHistroy>
