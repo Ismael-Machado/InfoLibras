@@ -1,22 +1,30 @@
-package br.ufac.si.academico.entidades;
+package infolibras.entidades;
 
 import java.util.*;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name = "registros")
 public class Registro {
-	Integer idRegistro;
-	int idUsuario;
-	int idAdmin;
-	String status;
-	String tipoOperacao;
-	Date dataRegistro;
-	Date DataValidacao;
-	String Observacoes;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer idRegistro;
+	private int idUsuario;
+	private int idAdmin;
+	private String status;
+	private String tipoOperacao;
+	private Date dataRegistro;
+	private Date DataValidacao;
+	private String Observacoes;
+
+//	@OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "fk_termo")
+//	private Termo termo;
 
 	public Registro() {
-		
+
 	}
 
 	public Registro(Integer idRegistro, int idUsuario, int idAdmin, String status, String tipoOperacao,
@@ -94,6 +102,21 @@ public class Registro {
 
 	public void setObservacoes(String observacoes) {
 		Observacoes = observacoes;
+	}
+
+//	public Termo getTermo() {
+//		return termo;
+//	}
+//
+//	public void setTermo(Termo termo) {
+//		this.termo = termo;
+//	}
+
+	@Override
+	public String toString() {
+		return "Registro [idRegistro=" + idRegistro + ", idUsuario=" + idUsuario + ", idAdmin=" + idAdmin + ", status="
+				+ status + ", tipoOperacao=" + tipoOperacao + ", dataRegistro=" + dataRegistro + ", DataValidacao="
+				+ DataValidacao + ", Observacoes=" + Observacoes + "]";
 	}
 
 }

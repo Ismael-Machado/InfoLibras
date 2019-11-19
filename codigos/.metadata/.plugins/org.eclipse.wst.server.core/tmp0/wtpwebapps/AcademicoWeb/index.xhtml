@@ -2,19 +2,35 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Sistema de Controle Acadêmico</title>
+<title>#{msgs['app.titulo']}</title>
 </head>
+<f:view locale="#{idiomaControlador.localidade}">
 <h:body>
 
-	<h1>Sistema de Controle Acadêmico</h1>
-	<h2>Ações e entidades permitidas</h2>
+	<h1>#{msgs['app.titulo']}</h1>
+	<h2>#{msgs['app.acoes']}</h2>
 	<ul>
-		<li><h:link value="Gerenciar Cursos" outcome="cursoGerenciamento" /></li>
-		<li><h:link value="Gerenciar Alunos" outcome="alunoGerenciamento" /></li>
+		<li><h:link value="#{msgs['curso.gerenciamento']}"
+				outcome="cursoGerenciamento" /></li>
+		<li><h:link value="#{msgs['aluno.gerenciamento']}"
+				outcome="alunoGerenciamento" /></li>
 	</ul>
 
+	<h:form>
+	<p align="right">
+		
+			<h:selectOneMenu value="#{idiomaControlador.linguagem}">
+				<f:selectItem itemValue="pt" itemLabel="Português" />
+				<f:selectItem itemValue="en" itemLabel="Inglês" />
+			</h:selectOneMenu>
+			<h:commandButton value="Mudar" action="#{idiomaControlador.mudar}" />
+		
+	</p>
+	</h:form>
 </h:body>
+</f:view>
 </html>

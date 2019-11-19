@@ -6,44 +6,44 @@
 	  xmlns:f="http://java.sun.com/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Sistema de Controle Acadêmico</title>
+<title>#{msgs['app.titulo']}</title>
 </head>
 <h:body>
 
-	<h1>Sistema de Controle Acadêmico</h1>
-	<h2>Gerenciamento de Alunos</h2>
+	<h1>#{msgs['app.titulo']}</h1>
+	<h2>#{msgs['aluno.gerenciamento']}</h2>
 
 	<h:form>
 	
-		<h:outputLabel value="Chave: " for="chave" />
+		<h:outputLabel value="#{msgs['gerenciamento.chave']}" for="chave" />
 		<h:inputText id="chave" value="#{alunoControlador.chave}" />
-		<h:commandButton action="null" value="Buscar" />
+		<h:commandButton action="null" value="#{msgs['gerenciamento.buscar']}" />
 		
-		<h:commandButton value="Incluir" 
+		<h:commandButton value="#{msgs['gerenciamento.incluir']}" 
 			action="#{alunoControlador.incluir}" />
 			
-		<h:commandButton value="Voltar" 
+		<h:commandButton value="#{msgs['gerenciamento.voltar']}" 
 			action="index" />		
 			
 		<h:dataTable value="#{alunoControlador.alunos}" 
 			var="aluno" border="1">
 			<h:column>
-				<f:facet name="header">Matrícula</f:facet>
+				<f:facet name="header">#{msgs['aluno.matricula']}</f:facet>
 				#{aluno.matricula}
 			</h:column>
 			<h:column>
-				<f:facet name="header">Nome</f:facet>
+				<f:facet name="header">#{msgs['aluno.nome']}</f:facet>
 				#{aluno.nome}
 			</h:column>
 			<h:column>
-				<f:facet name="header">Curso</f:facet>
+				<f:facet name="header">#{msgs['aluno.curso']}</f:facet>
 				#{aluno.curso.nome}
 			</h:column>
 			<h:column>
-				<f:facet name="header">Operações</f:facet>
-				<h:commandButton value="Editar" 
+				<f:facet name="header">#{msgs['gerenciamento.operacoes']}</f:facet>
+				<h:commandButton value="#{msgs['gerenciamento.editar']}" 
 					action="#{alunoControlador.editar(aluno)}" />
-				<h:commandButton value="Excluir" 
+				<h:commandButton value="#{msgs['gerenciamento.excluir']}" 
 					action="#{alunoControlador.excluir(aluno)}" />					
 			</h:column>			
 			

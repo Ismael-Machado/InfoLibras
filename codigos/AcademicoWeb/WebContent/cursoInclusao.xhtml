@@ -6,42 +6,48 @@
 	  xmlns:f="http://java.sun.com/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Sistema de Controle Acadêmico</title>
+<title>#{msgs['app.titulo']}</title>
 </head>
 <h:body>
 
-	<h1>Sistema de Controle Acadêmico</h1>
-	<h2>Inclusão de Curso</h2>
+	<h1>#{msgs['app.titulo']}</h1>
+	<h2>#{msgs['curso.inclusao']}</h2>
 
 	<h:form>
 
 		<h:panelGrid columns="3">
 		
-			<h:outputLabel value="Código:" for="codigo" />
+			<h:outputLabel 
+				value="#{msgs['curso.codigo']}:" 
+				for="codigo" />
 			<h:inputText id= "codigo" required="true"
 				value="#{cursoControlador.curso.codigo}"
-				requiredMessage="Código é obrigatório!"
-				converterMessage="Código deve ser numérico!"
-				validatorMessage="Código deve estar entre 1 e 999!">
+				requiredMessage="#{msgs['curso.codigo.obrigatorio']}"
+				converterMessage="#{msgs['curso.codigo.tipo']}"
+				validatorMessage="#{msgs['curso.codigo.valido']}">
 				<f:validateLongRange minimum="1" maximum="999" />
 			</h:inputText>
 				
 			<h:message for="codigo" />
 
-			<h:outputLabel value="Nome:" for="nome" />
+			<h:outputLabel 
+				value="#{msgs['curso.nome']}:" 
+				for="nome" />
 			<h:inputText id= "nome" required="true"
 				value="#{cursoControlador.curso.nome}"
-				requiredMessage="Nome é obrigatório!"
-				validatorMessage="Nome deve possuir entre 5 e 50 caracteres!">
+				requiredMessage="#{msgs['curso.nome.obrigatorio']}"
+				validatorMessage="#{msgs['curso.nome.valido']}">
 				<f:validateLength minimum="5" maximum="50" />
 			</h:inputText>	
 			<h:message for="nome" />
 										
 		</h:panelGrid>
 	
-		<h:commandButton value="Confirmar" 
+		<h:commandButton 
+			value="#{msgs['acao.confirmar']}" 
 			action="#{cursoControlador.adicionar}" />
-		<h:commandButton value="Cancelar" 
+		<h:commandButton 
+			value="#{msgs['acao.cancelar']}" 
 			action="cursoGerenciamento" immediate="true" />
 	
 	</h:form>

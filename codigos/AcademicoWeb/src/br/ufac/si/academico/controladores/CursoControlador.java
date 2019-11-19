@@ -56,7 +56,20 @@ public class CursoControlador {
 		this.curso = curso;
 	}
 
+	public Curso recuperar(int codigo) {
+		return cg.recuperar(codigo);
+	}
+	
 	public List<Curso> getCursos() {
+		return cg.recuperarTodos();
+	}
+	
+	public List<Curso> getCursosPorNome(){
+		return cg.recuperarTodosPorNome();
+	}
+	
+	public List<Curso> 
+		getCursosPorNomeContendo(){
 		return cg.recuperarTodosPorNomeContendo(chave);
 	}
 

@@ -12,9 +12,13 @@ public class Termo {
 	private String nome;
 	private String descricao;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
+	@ManyToOne(cascade = { CascadeType.MERGE })
 	@JoinColumn(name = "fk_usuario")
 	private Usuario user;
+	
+	@OneToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "fk_registro")
+	private Registro registro;
 
 	public Termo() {
 		super();
@@ -57,6 +61,15 @@ public class Termo {
 
 	public void setUser(Usuario user) {
 		this.user = user;
+	}
+
+	
+	public Registro getR() {
+		return registro;
+	}
+
+	public void setR(Registro r) {
+		this.registro = registro;
 	}
 
 	@Override

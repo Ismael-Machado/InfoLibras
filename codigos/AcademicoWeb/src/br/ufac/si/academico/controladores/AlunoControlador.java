@@ -11,14 +11,14 @@ import br.ufac.si.academico.gerentes.*;
 public class AlunoControlador {
 
 	private AlunoGerente ag;
-	private CursoGerente cg;
+//	private CursoGerente cg;
 	private Aluno aluno;
 	private String chave = "";
 //	private int codigoDoCurso;
 	
 	public AlunoControlador() {
 		ag = new AlunoGerente();
-		cg = new CursoGerente();
+//		cg = new CursoGerente();
 	}
 
 	public String incluir() {
@@ -66,9 +66,9 @@ public class AlunoControlador {
 		return ag.recuperarTodosPorNomeContendo(chave);
 	}
 
-	public List<Curso> getCursos() {
-		return cg.recuperarTodosPorNome();
-	}
+//	public List<Curso> getCursos() {
+//		return cg.recuperarTodosPorNome();
+//	}
 	
 	public String getChave() {
 		return chave;
