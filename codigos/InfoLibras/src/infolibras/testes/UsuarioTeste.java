@@ -24,12 +24,28 @@ public class UsuarioTeste {
 //		
 //		System.out.println("Deu certo! Terminado");
 		
+//		Usuario u = new Usuario();
+//		u.setNome("Bruno Fernando");
+//		
+//		UsuarioGerente ug = new UsuarioGerente();
+//		
+//		ug.adicionar(u);
+		
 		
 		UsuarioGerente ug = new UsuarioGerente();
+		Usuario u;
 		
 		
+		u = ug.recuperar(1);
 		
-		ug.recuperar(2);
+		System.out.println(u);
+		
+		ug.remover(u);
+		
+		System.out.println("Deu certo!");
+		
+		ug.encerrar();
+		
 		
 		
 	}

@@ -4,35 +4,35 @@ import javax.persistence.*;
 
 import infolibras.entidades.*;
 
-public class UsuarioGerente {
-
+public class TermoGerente {
+	
 	EntityManagerFactory emf;
 	EntityManager em;
-
-	public UsuarioGerente() {
+	
+	public TermoGerente() {
 		emf = Persistence.createEntityManagerFactory("Infolibras");
 		em = emf.createEntityManager();
 	}
-
-	public void adicionar(Usuario u) {
-		em.getTransaction().begin();
-		em.persist(u);
-		em.getTransaction().commit();
-	}
-
-	public Usuario recuperar(int id) {
-		return em.find(Usuario.class, id);
-	}
 	
-	public void atualizar(Usuario u) {
+	public void adicionar(Termo t) {
 		em.getTransaction().begin();
-		em.merge(u);
+		em.persist(t);
 		em.getTransaction().commit();
 	}
 	
-	public void remover(Usuario u) {
+	public Termo recuperar(int id) {
+		return em.find(Termo.class, id);
+	}
+	
+	public void atualizar(Termo t) {
 		em.getTransaction().begin();
-		em.remove(u);
+		em.merge(t);
+		em.getTransaction().commit();
+	}
+	
+	public void remover(Termo t) {
+		em.getTransaction().begin();
+		em.remove(t);
 		em.getTransaction().commit();
 	}
 	
@@ -40,5 +40,4 @@ public class UsuarioGerente {
 		em.close();
 		emf.close();
 	}
-
 }

@@ -8,9 +8,13 @@ public class Termo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	String nome;
-	String descricao;
+	private int id;
+	private String nome;
+	private String descricao;
+
+	@ManyToOne(cascade = { CascadeType.ALL })
+	@JoinColumn(name = "fk_usuario")
+	private Usuario user;
 
 	public Termo() {
 		super();
@@ -45,6 +49,19 @@ public class Termo {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public Usuario getUser() {
+		return user;
+	}
+
+	public void setUser(Usuario user) {
+		this.user = user;
+	}
+
+	@Override
+	public String toString() {
+		return "Termo [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", user=" + user + "]";
 	}
 
 }

@@ -10,14 +10,14 @@ public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	String nome;
-	String telefone;
-	String email;
-	Date nascimento;
-	Date dataCadastro;
-	String sexo;
-	int tipo;
+	private int id;
+	private String nome;
+	private String telefone;
+	private String email;
+	private Date nascimento;
+	private Date dataCadastro;
+	private String sexo;
+	private int tipo;
 
 	public Usuario() {
 
@@ -105,6 +105,5 @@ public class Usuario {
 		return "Usuario [id=" + id + ", nome=" + nome + ", telefone=" + telefone + ", email=" + email + ", nascimento="
 				+ nascimento + ", dataCadastro=" + dataCadastro + ", sexo=" + sexo + ", tipo=" + tipo + "]";
 	}
-	
-	
+
 }
