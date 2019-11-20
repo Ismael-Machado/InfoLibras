@@ -2,7 +2,7 @@
   <facet id="jst.jsf">
     <node name="libprov">
       <node name="last-provider-used">
-        <attribute name="2.1" value="jsf-user-library-provider"/>
+        <attribute name="2.1" value="jsf-no-op-library-provider"/>
       </node>
     </node>
     <node name="user.library.provider">
