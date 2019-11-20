@@ -8,11 +8,11 @@ import javax.persistence.*;
 @Table(name = "registros")
 @NamedQueries({
 	@NamedQuery(name="Registro.todos", 
-			query="SELECT reg FROM Registro reg"),
+			query="SELECT reg FROM Registro reg")/*,
 	@NamedQuery(name="Registro.todosPorNome",
 			query="SELECT reg FROM Registro reg ORDER BY reg.nome"),
 	@NamedQuery(name="Registro.todosPorNomeContendo", 
-		query="SELECT reg FROM Registro reg WHERE reg.nome LIKE :termo ORDER BY reg.nome")
+		query="SELECT reg FROM Registro reg WHERE reg.nome LIKE :termo ORDER BY reg.nome")*/
 })
 public class Registro {
 

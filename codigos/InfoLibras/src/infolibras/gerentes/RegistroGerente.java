@@ -47,7 +47,7 @@ public class RegistroGerente {
 	public List<Registro> recuperarTodos() {
 		return em.createNamedQuery("Registro.todos").getResultList();
 	}
-	
+	/*
 	@SuppressWarnings("unchecked")
 	public List<Registro> recuperarTodosPorNome(){
 		return em.createNamedQuery("Registro.todosPorNome")
@@ -60,4 +60,5 @@ public class RegistroGerente {
 				.setParameter("termo", "%"+termo+"%")
 				.getResultList();
 	}
+	*/
 }
