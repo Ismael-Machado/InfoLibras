@@ -6,13 +6,13 @@ import java.util.List;
 
 import javax.persistence.*;
 
-import infolibras.entidades.Usuario;
-import infolibras.gerentes.UsuarioGerente;
+import infolibras.entidades.*;
+import infolibras.gerentes.*;
 
 public class UsuarioTeste {
-	
-	public static void main(String [] args) {
-		
+
+	public static void main(String[] args) {
+
 //		Usuario u = new Usuario();
 //		EntityManagerFactory emf = Persistence.createEntityManagerFactory("Infolibras");
 //		EntityManager em = emf.createEntityManager();
@@ -26,15 +26,14 @@ public class UsuarioTeste {
 //		em.getTransaction().commit();
 //		
 //		System.out.println("Deu certo! Terminado");
-		
+
 //		Usuario u = new Usuario();
 //		u.setNome("Bruno Fernando");
 //		
 //		UsuarioGerente ug = new UsuarioGerente();
 //		
 //		ug.adicionar(u);
-		
-		
+
 //		UsuarioGerente ug = new UsuarioGerente();
 //		Usuario u;
 //		
@@ -48,17 +47,35 @@ public class UsuarioTeste {
 //		System.out.println("Deu certo!");
 //		
 //		ug.encerrar();
+
+//		List<Usuario> usuarios;
+//
+//		UsuarioGerente ug = new UsuarioGerente();
+//
+//		usuarios = ug.recuperarTodos();
+//
+//		for (Usuario u : usuarios) {
+//			System.out.println(u);
+//		}
+//
+//		List<Termo> termos;
+//		
+//		TermoGerente tg = new TermoGerente();
+//		
+//		termos = tg.recuperarTodos();
+//		
+//		for(Termo t: termos) {
+//			System.out.println(t);
+//		}
+//		
+		List<Registro> registros;
 		
-		List<Usuario> usuarios;
+		RegistroGerente rg = new RegistroGerente();
 		
-		UsuarioGerente ug = new UsuarioGerente();
+		registros = rg.recuperarTodos();
 		
-		usuarios = ug.recuperarTodos();
-		
-		for(Usuario u: usuarios) {
-			System.out.println(u);
+		for(Registro r: registros) {
+			System.out.println(r);
 		}
-		
-		
 	}
 }

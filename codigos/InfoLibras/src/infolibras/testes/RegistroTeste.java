@@ -15,6 +15,7 @@ public class RegistroTeste {
 //		UsuarioGerente ug = new UsuarioGerente();
 //		
 //		ug.adicionar(u);
+		/*
 		Usuario u;
 		
 		UsuarioGerente ug = new UsuarioGerente();
@@ -22,6 +23,7 @@ public class RegistroTeste {
 		u = ug.recuperar(1);
 		
 		System.out.println(u);
+		*/
 //		ug.atualizar(u);
 //		
 //		Termo t = new Termo();
@@ -34,22 +36,29 @@ public class RegistroTeste {
 //		
 //		tg.adicionar(t);
 		
+		
+		
+		
+		
+//		rg.adicionar(r);
+		
+		Termo t;
+		TermoGerente tg = new TermoGerente();
+		
+		t = tg.recuperar(1);
+		
+		
+//		t.setNome("Software");
+//		t.setDescricao("Representação do termo software");
+//		t.setUser(u);
+//		t.setR(r);
+		
 		Registro r = new Registro();
 		RegistroGerente rg = new RegistroGerente();
 		
+		r.setTermo(t);
+		
 		rg.adicionar(r);
-		
-		Termo t = new Termo();
-		
-		t.setNome("Software");
-		t.setDescricao("Representação do termo software");
-		t.setUser(u);
-		t.setR(r);
-		
-		TermoGerente tg = new TermoGerente();
-		
-		tg.adicionar(t);
-		
 		
 		
 		
@@ -62,7 +71,7 @@ public class RegistroTeste {
 //		
 		
 		tg.encerrar();
-		ug.encerrar();
+//		ug.encerrar();
 		rg.encerrar();
 	}
 

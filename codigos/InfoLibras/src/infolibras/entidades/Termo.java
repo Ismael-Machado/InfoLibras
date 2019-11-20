@@ -4,6 +4,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "termos")
+@NamedQueries({
+	@NamedQuery(name="Termo.todos", 
+			query="SELECT t FROM Termo t"),
+	@NamedQuery(name="Termo.todosPorNome",
+			query="SELECT t FROM Termo t ORDER BY t.nome"),
+	@NamedQuery(name="Termo.todosPorNomeContendo", 
+		query="SELECT t FROM Termo t WHERE t.nome LIKE :termo ORDER BY t.nome")
+})
 public class Termo {
 
 	@Id
@@ -16,9 +24,9 @@ public class Termo {
 	@JoinColumn(name = "fk_usuario")
 	private Usuario user;
 	
-	@OneToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "fk_registro")
-	private Registro registro;
+//	@OneToOne(cascade = { CascadeType.ALL })
+//	@JoinColumn(name = "fk_registro")
+//	private Registro registro;
 
 	public Termo() {
 		super();
@@ -64,13 +72,13 @@ public class Termo {
 	}
 
 	
-	public Registro getR() {
-		return registro;
-	}
-
-	public void setR(Registro r) {
-		this.registro = registro;
-	}
+//	public Registro getR() {
+//		return registro;
+//	}
+//
+//	public void setR(Registro r) {
+//		this.registro = registro;
+//	}
 
 	@Override
 	public String toString() {

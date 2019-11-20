@@ -6,6 +6,14 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "registros")
+@NamedQueries({
+	@NamedQuery(name="Registro.todos", 
+			query="SELECT reg FROM Registro reg"),
+	@NamedQuery(name="Registro.todosPorNome",
+			query="SELECT reg FROM Registro reg ORDER BY reg.nome"),
+	@NamedQuery(name="Registro.todosPorNomeContendo", 
+		query="SELECT reg FROM Registro reg WHERE reg.nome LIKE :termo ORDER BY reg.nome")
+})
 public class Registro {
 
 	@Id
@@ -19,9 +27,9 @@ public class Registro {
 	private Date DataValidacao;
 	private String Observacoes;
 
-//	@OneToOne(cascade = CascadeType.ALL)
-//	@JoinColumn(name = "fk_termo")
-//	private Termo termo;
+	@OneToOne(cascade = CascadeType.MERGE)
+	@JoinColumn(name = "fk_termo")
+	private Termo termo;
 
 	public Registro() {
 
@@ -104,13 +112,13 @@ public class Registro {
 		Observacoes = observacoes;
 	}
 
-//	public Termo getTermo() {
-//		return termo;
-//	}
-//
-//	public void setTermo(Termo termo) {
-//		this.termo = termo;
-//	}
+	public Termo getTermo() {
+		return termo;
+	}
+
+	public void setTermo(Termo termo) {
+		this.termo = termo;
+	}
 
 	@Override
 	public String toString() {

@@ -8,9 +8,7 @@
 <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
 <fullyQualifiedTypeName name="javax.persistence.Persistence"/>
 <fullyQualifiedTypeName name="javax.persistence.EntityManagerFactory"/>
-<fullyQualifiedTypeName name="infolibras.entidades.Termo"/>
 <fullyQualifiedTypeName name="infolibras.testes.TermoGerente"/>
-<fullyQualifiedTypeName name="infolibras.gerentes.TermoGerente"/>
 <fullyQualifiedTypeName name="javax.faces.context.FacesContext"/>
 <fullyQualifiedTypeName name="javax.persistence.Table"/>
 <fullyQualifiedTypeName name="javax.persistence.GeneratedValue"/>
@@ -20,9 +18,13 @@
 <fullyQualifiedTypeName name="javax.persistence.CascadeType"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
-<fullyQualifiedTypeName name="infolibras.gerentes.RegistroGerente"/>
 <fullyQualifiedTypeName name="javax.persistence.NamedQueries"/>
+<fullyQualifiedTypeName name="infolibras.gerentes.UsuarioGerente"/>
 <fullyQualifiedTypeName name="java.lang.SuppressWarnings"/>
 <fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="infolibras.gerentes.UsuarioGerente"/>
+<fullyQualifiedTypeName name="infolibras.entidades.Termo"/>
+<fullyQualifiedTypeName name="infolibras.gerentes.TermoGerente"/>
+<fullyQualifiedTypeName name="infolibras.testes.RegistroTeste"/>
+<fullyQualifiedTypeName name="infolibras.gerentes.RegistroGerente"/>
+<fullyQualifiedTypeName name="infolibras.entidades.Registro"/>
 </qualifiedTypeNameHistroy>

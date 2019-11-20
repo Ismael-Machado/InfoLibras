@@ -47,4 +47,17 @@ public class UsuarioGerente {
 	public List<Usuario> recuperarTodos() {
 		return em.createNamedQuery("Usuario.todos").getResultList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Usuario> recuperarTodosPorNome(){
+		return em.createNamedQuery("Usuario.todosPorNome")
+				.getResultList();
+	}
+	@SuppressWarnings("unchecked")
+	public List<Usuario> recuperarTodosPorNomeContendo(String termo){
+		return em
+				.createNamedQuery("Usuario.todosPorNomeContendo")
+				.setParameter("termo", "%"+termo+"%")
+				.getResultList();
+	}
 }

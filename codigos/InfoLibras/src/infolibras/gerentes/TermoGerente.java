@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.*;
 
+
 import infolibras.entidades.*;
 
 public class TermoGerente {
@@ -42,5 +43,22 @@ public class TermoGerente {
 		em.close();
 		emf.close();
 	}
-
+	
+	@SuppressWarnings("unchecked")
+	public List<Termo> recuperarTodos(){
+		return em.createNamedQuery("Termo.todos").getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Termo> recuperarTodosPorNome(){
+		return em.createNamedQuery("Termo.todosPorNome")
+				.getResultList();
+	}
+	@SuppressWarnings("unchecked")
+	public List<Termo> recuperarTodosPorNomeContendo(String termo){
+		return em
+				.createNamedQuery("Termo.todosPorNomeContendo")
+				.setParameter("termo", "%"+termo+"%")
+				.getResultList();
+	}
 }

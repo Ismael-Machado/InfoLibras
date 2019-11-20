@@ -1,5 +1,7 @@
 package infolibras.gerentes;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import infolibras.entidades.*;
@@ -39,5 +41,23 @@ public class RegistroGerente {
 	public void encerrar() {
 		em.close();
 		emf.close();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Registro> recuperarTodos() {
+		return em.createNamedQuery("Registro.todos").getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Registro> recuperarTodosPorNome(){
+		return em.createNamedQuery("Registro.todosPorNome")
+				.getResultList();
+	}
+	@SuppressWarnings("unchecked")
+	public List<Registro> recuperarTodosPorNomeContendo(String termo){
+		return em
+				.createNamedQuery("Registro.todosPorNomeContendo")
+				.setParameter("termo", "%"+termo+"%")
+				.getResultList();
 	}
 }
