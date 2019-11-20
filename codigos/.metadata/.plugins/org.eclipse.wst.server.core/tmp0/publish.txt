@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Tue Nov 19 17:45:37 COT 2019
+#Wed Nov 20 18:37:12 COT 2019
 org.eclipse.jst.j2ee.server\:Academico=WEB-INF/lib/Academico.jar
+org.eclipse.jst.j2ee.server\:InfoLibras=WEB-INF/lib/InfoLibras.jar

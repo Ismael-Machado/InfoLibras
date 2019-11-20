@@ -15,5 +15,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JSF 2.1 (Apache MyFaces 2.1.5)"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/InfoLibras"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Primefaces"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
