@@ -1,5 +1,4 @@
 package infolibras.entidades;
-
 import javax.persistence.*;
 
 @Entity
@@ -24,16 +23,14 @@ public class Termo {
 	@JoinColumn(name = "fk_usuario")
 	private Usuario user;
 	
-//	@OneToOne(cascade = { CascadeType.ALL })
-//	@JoinColumn(name = "fk_registro")
-//	private Registro registro;
+	@JoinColumn(name = "fk_registro")
+	@OneToOne(cascade = CascadeType.ALL)
+	private Registro registro;
 
 	public Termo() {
-		super();
 	}
 
 	public Termo(int id, String nome, String descricao) {
-		super();
 		this.id = id;
 		this.nome = nome;
 		this.descricao = descricao;
@@ -63,6 +60,14 @@ public class Termo {
 		this.descricao = descricao;
 	}
 
+	public Registro getRegistro() {
+		return registro;
+	}
+
+	public void setRegistro(Registro registro) {
+		this.registro = registro;
+	}
+
 	public Usuario getUser() {
 		return user;
 	}
@@ -70,15 +75,6 @@ public class Termo {
 	public void setUser(Usuario user) {
 		this.user = user;
 	}
-
-	
-//	public Registro getR() {
-//		return registro;
-//	}
-//
-//	public void setR(Registro r) {
-//		this.registro = registro;
-//	}
 
 	@Override
 	public String toString() {
