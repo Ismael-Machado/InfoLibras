@@ -24,6 +24,11 @@ public class Termo {
 	@JoinColumn(name = "fk_usuario")
 	private Usuario user;
 	
+	
+	//variável que guarda o caminho temporario da imagem que está sendo feito o upload
+	@Transient
+	private String caminho;
+	
 //	@OneToOne(cascade = { CascadeType.ALL })
 //	@JoinColumn(name = "fk_registro")
 //	private Registro registro;
@@ -85,4 +90,13 @@ public class Termo {
 		return "Termo [id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", user=" + user + "]";
 	}
 
+	public String getCaminho() {
+		return caminho;
+	}
+
+	public void setCaminho(String caminho) {
+		this.caminho = caminho;
+	}
+	
+	
 }

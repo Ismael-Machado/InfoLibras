@@ -2,88 +2,90 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>#{msgs['app.titulo']}</title>
 </head>
-<h:body>
+<f:view locale="#{idiomaControlador.localidade}">
+	<h:body>
 
-	<h1>#{msgs['app.titulo']}</h1>
-	<h2>#{msgs['aluno.inclusao']}</h2>
+		<h1>#{msgs['app.titulo']}</h1>
+		<h2>#{msgs['aluno.inclusao']}</h2>
 
-	<h:form>
-	
-		<h:panelGrid columns="3">
-		
-			<h:outputLabel value="#{msgs['aluno.matricula']}" for="matricula" />
-			<h:inputText id= "matricula"
-				value="#{alunoControlador.aluno.matricula}"
-				required="true"
-				requiredMessage="#{msgs['aluno.matricula.obrigatoria']}"
-				converterMessage="#{msgs['aluno.matricula.tipo']}" />
-			<h:message for="matricula" />
-			
-			<h:outputLabel value="#{msgs['aluno.nome']}" for="nome" />
-			<h:inputText id= "nome"
-				value="#{alunoControlador.aluno.nome}"
-				required="true"
-				requiredMessage="#{msgs['aluno.nome.obrigatorio']}" />
-			<h:message for="nome" />
+		<h:form>
 
-			<h:outputLabel value="#{msgs['aluno.fone']}" for="fone" />
-			<h:inputText id= "fone"
-				value="#{alunoControlador.aluno.fone}" 
-				required="true"
-				requiredMessage="#{msgs['aluno.fone.valido']}"/>
-			<h:message for="fone" />
+			<h:panelGrid columns="3">
 
-			<h:outputLabel value="#{msgs['aluno.endereco']}" for="endereco" />
-			<h:inputText id= "endereco"
-				value="#{alunoControlador.aluno.endereco}" 
-				required="true"
-				requiredMessage="#{aluno.endereco.obrigatorio}"/>
-			<h:message for="endereco" />
-				
-			<h:outputLabel value="#{msgs['aluno.cep']}" for="cep" />
-			<h:inputText id= "cep"
-				value="#{alunoControlador.aluno.cep}"
-				required="true"
-				requiredMessage="#{aluno.cep.obrigatorio}" />
-			<h:message for="cep" />
+				<h:outputLabel value="#{msgs['aluno.matricula']}:" for="matricula" />
+				<h:inputText id="matricula"
+					value="#{alunoControlador.aluno.matricula}" required="true"
+					requiredMessage="#{msgs['aluno.matricula.obrigatoria']}"
+					converterMessage="#{msgs['aluno.matricula.tipo']}" />
+				<h:message for="matricula" />
 
-			<h:outputLabel value="#{msgs['aluno.sexo']}" for="sexo" />
-			<h:selectOneMenu id="sexo" 
-				value="#{alunoControlador.aluno.sexo}"
-				required="true"
-				requiredMessage="#{aluno.sexo.obrigatorio}">
-				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--"/>
-				<f:selectItem itemValue="M" itemLabel="Masculino" />
-				<f:selectItem itemValue="F" itemLabel="Feminino" />
-			</h:selectOneMenu>
-			<h:message for="sexo" />
+				<h:outputLabel value="#{msgs['aluno.nome']}: " for="nome" />
+				<h:inputText id="nome" required="true"
+					value="#{alunoControlador.aluno.nome}"
+					requiredMessage="#{msgs['aluno.nome.obrigatorio']}"
+					validatorMessage="#{msgs['aluno.nome.valido']}">
+					<f:validateLength minimum="5" maximum="50" />
+				</h:inputText>
+				<h:message for="nome" />
 
-			<h:outputLabel value="#{msgs['aluno.curso']}" for="curso" />
-			<h:selectOneMenu id="curso" converter="cursoConversor"
-				value="#{alunoControlador.aluno.curso}"
-				required="true"
-				requiredMessage="#{aluno.curso.obrigatorio}">
-				<f:selectItem noSelectionOption="true" itemLabel="--Selecione--"/>
-				<f:selectItems value="#{cursoControlador.cursosPorNome}" var="curso"
-					itemValue="#{curso}"
-					itemLabel="#{curso.nome}"/>
-			</h:selectOneMenu>	
-			<h:message for="curso" />		
-		</h:panelGrid>
-	
-		<h:commandButton value="#{msgs['acao.confirmar']}" 
-			action="#{alunoControlador.adicionar}" />
-		<h:commandButton value="#{msgs['acao.cancelar']}" 
-			action="alunoGerenciamento" immediate="true"/>
-	
-	</h:form>
+				<h:outputLabel value="#{msgs['aluno.fone']}:" for="fone" />
+				<h:inputText id="fone"
+					value="#{alunoControlador.aluno.fone}"
+					validatorMessage="#{msgs['aluno.fone.valido']}">
+					<f:validateLength minimum="10" maximum="11" />
+				</h:inputText>
+				<h:message for="fone" />
 
+				<h:outputLabel value="#{msgs['aluno.endereco']}:" for="endereco" />
+				<h:inputText id="endereco" required="true"
+					value="#{alunoControlador.aluno.endereco}"
+					requiredMessage="#{msgs['aluno.endereco.obrigatorio']}"
+					validatorMessage="#{msgs['aluno.endereco.valido']}">
+					<f:validateLength minimum="6" maximum="60" />
+				</h:inputText>
+				<h:message for="endereco" />
 
-</h:body>
+				<h:outputLabel value="#{msgs['aluno.cep']}:" for="cep" />
+				<h:inputText id="cep" required="true"
+					value="#{alunoControlador.aluno.cep}"
+					requiredMessage="#{msgs['aluno.cep.obrigatorio']}"
+					validatorMessage="#{msgs['aluno.cep.valido']}">
+					<f:validateLength minimum="5" maximum="8" />
+				</h:inputText>
+				<h:message for="cep" />
+
+				<h:outputLabel value="#{msgs['aluno.sexo']}::" for="sexo" />
+				<h:selectOneMenu id="sexo" value="#{alunoControlador.aluno.sexo}"
+					required="true" requiredMessage="#{msgs['aluno.sexo.obrigatorio']}">
+					<f:selectItem noSelectionOption="true" itemLabel="--#{msgs['app.selecione']}--" />
+					<f:selectItem itemValue="M" itemLabel="#{msgs['aluno.sexo.m']}" />
+					<f:selectItem itemValue="F" itemLabel="#{msgs['aluno.sexo.f']}" />
+				</h:selectOneMenu>
+				<h:message for="sexo" />
+
+				<h:outputLabel value="#{msgs['aluno.curso']}::" for="curso" />
+				<h:selectOneMenu id="curso" converter="cursoConversor"
+					value="#{alunoControlador.aluno.curso}" required="true"
+					requiredMessage="#{msgs['aluno.curso.obrigatorio']}">
+					<f:selectItem noSelectionOption="true" itemLabel="--#{msgs['app.selecione']}--" />
+					<f:selectItems value="#{cursoControlador.cursosPorNome}"
+						var="curso" itemValue="#{curso}" itemLabel="#{curso.nome}" />
+				</h:selectOneMenu>
+				<h:message for="curso" />
+			</h:panelGrid>
+
+			<h:commandButton value="#{msgs['acao.confirmar']}"
+				action="#{alunoControlador.adicionar}" />
+			<h:commandButton value="#{msgs['acao.cancelar']}"
+				action="alunoGerenciamento" immediate="true" />
+
+		</h:form>
+	</h:body>
+</f:view>
 </html>

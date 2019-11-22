@@ -27,10 +27,17 @@ public class TermoGerente {
 		return em.find(Termo.class, id);
 	}
 
-	public void atualizar(Termo t) {
+	public Object atualizar(Termo t) {
+		//definindo um objeto de retorno para guardar o objetivo que será inserido ou atualizado
+		//para poder pegar o id do objeto logo após a inserção no banco
+		//para no mesmo momento pegar esse id e usar como nome para armazenar a imagem no diretório local
+		Object retorno;
+		
 		em.getTransaction().begin();
-		em.merge(t);
+		retorno = (Object) em.merge(t);
 		em.getTransaction().commit();
+		
+		return retorno;
 	}
 
 	public void remover(Termo t) {

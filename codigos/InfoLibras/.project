@@ -3,7 +3,6 @@
 	<name>InfoLibras</name>
 	<comment></comment>
 	<projects>
-		<project>InfoLibrasWeb</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

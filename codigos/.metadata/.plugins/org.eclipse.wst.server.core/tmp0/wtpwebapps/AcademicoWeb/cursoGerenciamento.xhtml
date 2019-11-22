@@ -2,61 +2,54 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:h="http://java.sun.com/jsf/html"
-	  xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>#{msgs['app.titulo']}</title>
 </head>
 <h:body>
+	<ui:composition template="/templates/geral.xhtml">
+		<ui:define name="conteudo">
 
-	<h1>#{msgs['app.titulo']}</h1>
-	<h2>#{msgs['curso.gerenciamento']}</h2>
+			<h:form>
 
-	<h:form>
-	
-		<h:outputLabel 
-			value="#{msgs['gerenciamento.chave']}: " 
-			for="chave" />
-		<h:inputText id="chave" value="#{cursoControlador.chave}" />
-		<h:commandButton action="null" 
-			value="#{msgs['gerenciamento.buscar']}" />
-		
-		<h:commandButton 
-			value="#{msgs['gerenciamento.incluir']}" 
-			action="#{cursoControlador.incluir}" />
-			
-		<h:commandButton 
-			value="#{msgs['gerenciamento.voltar']}" 
-			action="index" />		
-			
-		<h:dataTable 
-			value="#{cursoControlador.cursosPorNomeContendo}" 
-			var="curso" border="1">
-			<h:column>
-				<f:facet name="header">#{msgs['curso.codigo']}</f:facet>
+				<h:outputLabel value="#{msgs['gerenciamento.chave']}: " for="chave" />
+				<h:inputText id="chave" value="#{cursoControlador.chave}" />
+				<h:commandButton action="null"
+					value="#{msgs['gerenciamento.buscar']}" />
+
+				<h:commandButton value="#{msgs['gerenciamento.incluir']}"
+					action="#{cursoControlador.incluir}" />
+
+				<h:commandButton value="#{msgs['gerenciamento.voltar']}"
+					action="index" />
+
+				<h:dataTable value="#{cursoControlador.cursosPorNomeContendo}"
+					var="curso" border="1">
+					<h:column>
+						<f:facet name="header">#{msgs['curso.codigo']}</f:facet>
 				#{curso.codigo}
 			</h:column>
-			<h:column>
-				<f:facet name="header">#{msgs['curso.nome']}</f:facet>
+					<h:column>
+						<f:facet name="header">#{msgs['curso.nome']}</f:facet>
 				#{curso.nome}
 			</h:column>
-			<h:column>
-				<f:facet name="header">
+					<h:column>
+						<f:facet name="header">
 					#{msgs['gerenciamento.operacoes']}
 				</f:facet>
-				<h:commandButton 
-					value="#{msgs['gerenciamento.editar']}" 
-					action="#{cursoControlador.editar(curso)}" />
-				<h:commandButton 
-					value="#{msgs['gerenciamento.excluir']}" 
-					action="#{cursoControlador.excluir(curso)}" />					
-			</h:column>			
-			
-		</h:dataTable>	
-	
-	</h:form>
+						<h:commandButton value="#{msgs['gerenciamento.editar']}"
+							action="#{cursoControlador.editar(curso)}" />
+						<h:commandButton value="#{msgs['gerenciamento.excluir']}"
+							action="#{cursoControlador.excluir(curso)}" />
+					</h:column>
 
+				</h:dataTable>
+
+			</h:form>
+	</ui:define>
+	</ui:composition>
 
 </h:body>
+
 </html>

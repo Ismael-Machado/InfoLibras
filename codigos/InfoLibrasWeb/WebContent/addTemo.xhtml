@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Infolibras</title>
+</head>
+
+<h:body>
+<!-- comentário teste -->
+	<h1>InfoLibras</h1>
+	<h2>A plataforma que auxilia o aprendizado </h2>
+	<h2>de universitários com limitação auditiva e seus interprétes </h2>
+	<!--  
+	<ul>
+		<li><h:link value="#{msgs['curso.gerenciamento']}"
+				outcome="cursoGerenciamento" /></li>
+		<li><h:link value="#{msgs['aluno.gerenciamento']}"
+				outcome="alunoGerenciamento" /></li>
+	</ul>
+	-->
+	
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value ="Nome termo:" for="nome"/>
+			<h:inputText id="nome" value="#{termoControlador.termo.nome}" />
+			<f:validateBean/>
+			<h:outputLabel value ="Descricao:" for="descricao"/>
+			<h:inputText id="descricao" value="#{termoControlador.termo.descricao}" />
+			<f:validateBean/>
+			
+		</h:panelGrid>
+		
+		<h:commandButton value="Salvar" action="#{termoControlador.adicionar}"/>
+		
+	</h:form>
+	
+	<h:form>
+		<p:outputLabel for="foto" value="Foto:"/>
+		<p:fileUpload id="foto" mode="advanced" fileUploadListener="#{termoControlador.upload}"/>
+	</h:form>
+	
+	
+</h:body>
+
+</html>
