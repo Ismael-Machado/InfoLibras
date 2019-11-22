@@ -1,6 +1,5 @@
 package infolibras.entidades;
-
-import java.util.*;
+import java.sql.Date;
 
 import javax.persistence.*;
 

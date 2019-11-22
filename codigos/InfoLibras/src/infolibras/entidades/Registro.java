@@ -1,7 +1,5 @@
 package infolibras.entidades;
-
-import java.util.*;
-
+import java.sql.Date;
 import javax.persistence.*;
 
 @Entity
@@ -27,7 +25,7 @@ public class Registro {
 	private Date DataValidacao;
 	private String Observacoes;
 
-	@OneToOne(cascade = CascadeType.MERGE)
+	@OneToOne(mappedBy = "registro")
 	@JoinColumn(name = "fk_termo")
 	private Termo termo;
 

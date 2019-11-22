@@ -27,12 +27,12 @@ public class UsuarioTeste {
 //		
 //		System.out.println("Deu certo! Terminado");
 
-//		Usuario u = new Usuario();
-//		u.setNome("Bruno Fernando");
+		Usuario u = new Usuario();
+		u.setNome("Bruno Fernando");
 //		
-//		UsuarioGerente ug = new UsuarioGerente();
+		UsuarioGerente ug = new UsuarioGerente();
 //		
-//		ug.adicionar(u);
+		ug.adicionar(u);
 
 //		UsuarioGerente ug = new UsuarioGerente();
 //		Usuario u;
@@ -46,7 +46,7 @@ public class UsuarioTeste {
 //		
 //		System.out.println("Deu certo!");
 //		
-//		ug.encerrar();
+		ug.encerrar();
 
 //		List<Usuario> usuarios;
 //
@@ -68,14 +68,14 @@ public class UsuarioTeste {
 //			System.out.println(t);
 //		}
 //		
-		List<Registro> registros;
-		
-		RegistroGerente rg = new RegistroGerente();
-		
-		registros = rg.recuperarTodos();
-		
-		for(Registro r: registros) {
-			System.out.println(r);
-		}
+//		List<Registro> registros;
+//		
+//		RegistroGerente rg = new RegistroGerente();
+//		
+//		registros = rg.recuperarTodos();
+//		
+//		for(Registro r: registros) {
+//			System.out.println(r);
+//		}
 	}
 }

@@ -7,21 +7,36 @@ public class TermoTeste {
 
 	public static void main(String[] args) {
 		
-		Usuario u;
-		
 		UsuarioGerente ug = new UsuarioGerente();
-		
-		u = ug.recuperar(1);
-		
-		Termo t = new Termo();
-		
-		t.setNome("Software");
-		t.setDescricao("Representação do termo software da área de tecnologia para linguagem brasileira de sinais");
-		t.setUser(u);
-		
 		TermoGerente tg = new TermoGerente();
 		
-		tg.atualizar(t);
+		Usuario u1,u2;
+		
+		u1 = ug.recuperar(1);
+		u2 = ug.recuperar(4);
+		
+		Termo t1, t2;
+		Registro r1, r2;
+
+		t1 = new Termo();
+		r1 = new Registro();
+		t1.setNome("Software");
+		t1.setDescricao("Representaï¿½ï¿½o do termo software da ï¿½rea de tecnologia para linguagem brasileira de sinais");
+		t1.setUser(u1);
+		t1.setRegistro(r1);
+		
+		
+		t2 = new Termo();
+		r2 = new Registro();
+		t2.setNome("Software");
+		t2.setDescricao("Representaï¿½ï¿½o do termo software da ï¿½rea de tecnologia para linguagem brasileira de sinais");
+		t2.setUser(u2);
+		t2.setRegistro(r2);
+		
+		tg.adicionar(t1);
+		tg.adicionar(t2);
+		
+		
 		tg.encerrar();
 		
 	}
