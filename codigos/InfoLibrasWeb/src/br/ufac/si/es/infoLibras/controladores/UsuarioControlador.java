@@ -1,5 +1,7 @@
 package br.ufac.si.es.infoLibras.controladores;
 
+import java.util.List;
+
 import javax.faces.bean.*;
 //import br.ufac.si.recursos.ExibirMensagem;
 import infolibras.entidades.*;
@@ -121,5 +123,16 @@ public class UsuarioControlador {
 //		return "/paginas/usuarioEdicao.xhtml?faces-redirect=true";
 //	}
 
+	public List<Usuario> getTermos(){
+		return ug.recuperarTodos();
+	}
+	
+	public List<Usuario> getTermosPorNome(){
+		return ug.recuperarTodosPorNome();
+	}
+	
+	public List<Usuario> getTermosPorNomeContendo(){
+		return ug.recuperarTodosPorNomeContendo(chave);
+	}
 
 }

@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 import javax.faces.bean.*;
 
@@ -14,6 +15,7 @@ import org.primefaces.model.UploadedFile;
 import infolibras.entidades.*;
 import infolibras.gerentes.*;
 import org.primefaces.component.lifecycle.LifecyclePhaseListener;
+
 @SuppressWarnings("serial")
 @ManagedBean(name = "termoControlador")
 @ViewScoped
@@ -26,15 +28,9 @@ public class TermoControlador {
 		tg = new TermoGerente();
 	}
 
-	public String add() {
-		this.termo = new Termo();
-		return "addTemo";
-	}
-
 	public String adicionar() {
 		this.termo = new Termo();
 		tg.adicionar(this.termo);
-
 		return "addTemo";
 	}
 
@@ -50,7 +46,7 @@ public class TermoControlador {
 		// pegando origem do caminho temporário
 		Path origem = Paths.get(termo.getCaminho());
 		// definindo o destino que o arquivo será salvo
-		Path destino = Paths.get("C:/termosUploads" + termoRetorno.getId() + ".gif");
+		Path destino = Paths.get("C:/termosUploads/" + termoRetorno.getId() + ".gif");
 
 		try {
 			// copiando da origem pro destino;
@@ -60,7 +56,33 @@ public class TermoControlador {
 		}
 		return "addTemo";
 	}
-
+	
+	public String remover() {
+		tg.remover(termo);
+		
+		//pegando o caminho do arquivo de imagem guardado no diretório local
+		Path arquivo = Paths.get("C:/termosUploads/" + termo.getId() + ".gif");
+		
+		try {
+			Files.deleteIfExists(arquivo);
+		}catch(IOException e) {
+			e.getMessage();
+		}
+		return null;
+	}
+	
+	public List<Termo> getTermos(){
+		return tg.recuperarTodos();
+	}
+	
+	public List<Termo> getTermosPorNome(){
+		return tg.recuperarTodosPorNome();
+	}
+	
+	public List<Termo> getTermosPorNomeContendo(){
+		return tg.recuperarTodosPorNomeContendo(chave);
+	}
+	
 	public Termo getTermo() {
 		return termo;
 	}

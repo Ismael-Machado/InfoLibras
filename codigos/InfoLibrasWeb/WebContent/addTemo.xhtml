@@ -28,10 +28,10 @@
 		<h:panelGrid columns="2">
 			<h:outputLabel value ="Nome termo:" for="nome"/>
 			<h:inputText id="nome" value="#{termoControlador.termo.nome}" />
-			<f:validateBean/>
+			
 			<h:outputLabel value ="Descricao:" for="descricao"/>
 			<h:inputText id="descricao" value="#{termoControlador.termo.descricao}" />
-			<f:validateBean/>
+			
 			
 		</h:panelGrid>
 		
@@ -44,6 +44,12 @@
 		<p:fileUpload id="foto" mode="advanced" fileUploadListener="#{termoControlador.upload}"/>
 	</h:form>
 	
+	<h:form>
+		<p:outputLabel for="foto" value="Foto:"/>
+		<p:graphicImage id="foto" value="#{imagemControlador.caminho}">
+			<f:param name="caminho" value="#{termoControlador.termo.caminho}"/>
+		</p:graphicImage>
+	</h:form>
 	
 </h:body>
 
